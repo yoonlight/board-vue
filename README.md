@@ -1,24 +1,28 @@
 # board-vue
 
-## Project setup
-```
-yarn install
+## Start
+
+```shell
+vue create <name>
+vue add vuetify
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Default Setting
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### link API Server
 
-### Lints and fixes files
+```js
+module.exports = {
+  devServer: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:3001/api",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": "",
+        },
+      },
+    },
+  },
+};
 ```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
