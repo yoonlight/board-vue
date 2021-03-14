@@ -5,6 +5,8 @@
 ```shell
 vue create <name>
 vue add vuetify
+yarn add axios vue-axios 
+yarn add vue-toasted
 ```
 
 ## Default Setting
