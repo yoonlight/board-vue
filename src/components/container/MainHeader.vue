@@ -2,6 +2,8 @@
   <div>
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
+        <v-app-bar-nav-icon @click="drawerCtrl"></v-app-bar-nav-icon>
+
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -36,7 +38,19 @@
 </template>
 
 <script>
-export default {};
+import { EventBus } from "../../utils/eventBus";
+export default {
+  data: () => ({
+    drawer: false
+  }),
+
+  methods: {
+    drawerCtrl() {
+      this.drawer = !this.drawer;
+      EventBus.$emit("drawer", this.drawer);
+    }
+  }
+};
 </script>
 
 <style></style>

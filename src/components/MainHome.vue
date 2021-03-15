@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <main-drawer />
+    <main-drawer :drawer.sync="drawer" />
     <main-header />
     <v-main>
       <HelloWorld />
@@ -23,7 +23,7 @@ export default {
   },
 
   data: () => ({
-    //
+    drawer: false
   })
 };
 </script>

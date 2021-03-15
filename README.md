@@ -28,3 +28,7 @@ module.exports = {
   },
 };
 ```
+
+## Reference
+
+[Event Bus](https://webruden.tistory.com/109)
