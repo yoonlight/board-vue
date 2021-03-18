@@ -42,7 +42,9 @@ export default {
 
   created() {
     EventBus.$on("drawer", drawer => {
-      this.drawer = drawer;
+      if (this.drawer == drawer) this.drawer = !drawer;
+      //For mobile Logic
+      else this.drawer = drawer;
     });
   }
 };
